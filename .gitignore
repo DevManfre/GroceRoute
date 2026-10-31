@@ -1,0 +1,35 @@
+# Secrets and personal configuration
+.env
+.env.*
+!.env.example
+config.yaml
+
+# Data (prices, catalogs, receipts)
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql.gz
+receipts*.json
+exports/
+
+# Browser sessions and tokens
+.playwright/
+playwright/.auth/
+*.token
+storage_state*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+# Debug: responses recorded during development
+debug/
+*.har
