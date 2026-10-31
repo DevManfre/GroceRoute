@@ -1,0 +1,26 @@
+# Copy to config.yaml (ignored by git) and put in your own stores.
+stores:
+  - chain: esselunga
+    name: "Esselunga via ..."
+    lat: 0.0
+    lon: 0.0
+    zone_key: "40121"
+    base: true
+  - chain: coop
+    name: "Coop ..."
+    zone_key: "40121"
+  - chain: lidl
+    name: "Lidl ..."
+
+optimizer:
+  min_items_per_store: 2
+  min_saving_per_store: 2.00   # €
+  store_penalty: 0.50          # € per extra store, tie-breaker
+
+# Item names are in Italian, as on the shopping list and in the store catalogs
+preferences:
+  tonno: "in olive oil, no unknown brands"
+  latte: "semi-skimmed, 1 litre"
+
+schedule:
+  fetch_cron: "0 6 * * 1,4"    # Monday and Thursday
