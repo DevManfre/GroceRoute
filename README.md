@@ -402,6 +402,7 @@ groceroute/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── Dockerfile
 ├── docker-compose.yml
 ├── pyproject.toml
 ├── .env.example                 # variable names only, empty values
@@ -469,7 +470,7 @@ docker compose up -d
 ANTHROPIC_API_KEY=
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_ALLOWED_USER_ID=
-DATABASE_URL=postgresql://groceroute:groceroute@db:5432/groceroute
+DATABASE_URL=postgresql+psycopg://groceroute:groceroute@db:5432/groceroute
 LIDL_PLUS_REFRESH_TOKEN=
 ```
 
