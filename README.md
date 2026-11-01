@@ -73,7 +73,7 @@ GroceRoute solves them in this order: **data collection → AI matching → opti
 |---|---|---|---|---|---|---|---|
 | **Coop Alleanza 3.0** | EasyCoop – Magento GraphQL | None | ✅ full catalog | ✅ | ✅ | ✅ | `httpx` |
 | **Esselunga** | Esselunga a casa – search API | Session token (401 on direct calls) | ✅ full catalog | ✅ | ✅ | ✅ | Playwright (interception) |
-| **Lidl** | lidl.it – search API | None | ❌ current promos only | ✅ | ✅ | ❓ | `httpx` |
+| **Lidl** | lidl.it – search API | None | ❌ current promos only | ✅ | ✅ | ❌ | `httpx` |
 | **Lidl** | Lidl Plus – receipts | Account login (refresh token) | ✅ purchased products only | — | — | ❓ | `lidl-plus` library |
 
 ### Coop – EasyCoop (GraphQL)
@@ -201,7 +201,11 @@ Products are in `items[].gridbox.data`:
 
 **Limitations:**
 - It returns **only the current promotional assortment**: "tonno" gives 7 results, mixed with non-food items such as a monitor stand or a bed sheet.
-- The site lets you **select a store**: to verify whether offers vary by store and how to pass the store to the API.
+- No EAN: `gs1Attributes` is empty, so cross-store matching relies on the LLM.
+- `price.basePrice.text` (`"1 kg = 7.24 €"`, sometimes with a decimal comma) and `price.packaging.text` (`"2x 125 g confezione"`) are free text; multi-size packs (`"300/400/500 g"`) have no single quantity or price/kg.
+- `storeStartDate` / `storeEndDate` (Unix seconds, Europe/Rome) give the in-store validity; the end date is often missing.
+- **Regions** (verified on 2026-11-01): each item has `regionsV2` (region id → name and `regionPriceId`) and `regionsPrices` (price list id → price). All 18 regions, Emilia (`301`, Massa Lombarda) included, pointed at the same list `1`, so offers are national for now. The source accepts a `region_id` in case that changes.
+- Lidl Plus-only prices: not seen yet (`lidlPlus` was always empty).
 
 ### Lidl – Receipts (Lidl Plus)
 
@@ -521,7 +525,7 @@ schedule:
 
 ### Phase 1: data sources
 - [x] `coop_easycoop.py`: GraphQL search and pagination
-- [ ] `lidl_offers.py`: search API
+- [x] `lidl_offers.py`: search API
 - [ ] `esselunga.py`: Playwright with interception
 - [ ] `lidl_receipts.py`: Lidl Plus receipt import (verify IT accounts)
 - [ ] `probe_sources.py` and tests with synthetic fixtures
@@ -549,7 +553,7 @@ schedule:
 
 - [ ] **Esselunga:** do prices vary by postcode or store? Does `discountedPrice` include Fidaty promos?
 - [ ] **Coop:** are there member-only prices, and do they show up in the `member_*` attributes? Do prices vary between areas (Bologna vs Modena)? (EAN: exposed as the `ean` custom attribute.)
-- [ ] **Lidl:** do offers on lidl.it vary by store? How is the store selected via the API?
+- [ ] **Lidl:** prices are per region (`regionsPrices`), all identical so far: do they ever diverge? How do Lidl Plus-only prices show up in `lidlPlus`?
 - [ ] **Lidl Plus:** does the library work with `country=IT`?
 - [ ] **Online vs in-store:** how much do online prices differ from what you pay at the till?
 - [ ] **Frequency:** is weekly collection enough, or are more runs needed to follow promo cycles?
