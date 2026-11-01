@@ -1,0 +1,86 @@
+{
+  "data": {
+    "products": {
+      "total_count": 5,
+      "page_info": {
+        "current_page": 2,
+        "total_pages": 2
+      },
+      "items": [
+        {
+          "sku": "9000004",
+          "name": "Latteria Esempio Latte Intero 1 L",
+          "stock_status": "IN_STOCK",
+          "special_from_date": null,
+          "special_to_date": null,
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 1.5,
+                "currency": "EUR"
+              },
+              "final_price": {
+                "value": 1.5
+              }
+            }
+          },
+          "custom_attributesV2": {
+            "items": [
+              {
+                "code": "manufacturer",
+                "selected_options": [
+                  {
+                    "label": "LATTERIA ESEMPIO",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "tipo_misura",
+                "selected_options": [
+                  {
+                    "label": "LT",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "misura_prezzo_chiaro",
+                "value": "1.000"
+              },
+              {
+                "code": "transparent_price",
+                "value": "150.000000"
+              },
+              {
+                "code": "peso_variabile",
+                "value": "0"
+              }
+            ]
+          }
+        },
+        {
+          "sku": "9000005",
+          "name": "Prodotto Senza Prezzo",
+          "stock_status": "IN_STOCK",
+          "special_from_date": null,
+          "special_to_date": null,
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 0,
+                "currency": "EUR"
+              },
+              "final_price": {
+                "value": 0
+              }
+            }
+          },
+          "custom_attributesV2": {
+            "items": []
+          }
+        }
+      ]
+    }
+  }
+}

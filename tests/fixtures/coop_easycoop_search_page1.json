@@ -1,0 +1,193 @@
+{
+  "data": {
+    "products": {
+      "total_count": 5,
+      "page_info": {
+        "current_page": 1,
+        "total_pages": 2
+      },
+      "items": [
+        {
+          "sku": "9000001",
+          "name": "Testmare Tonno All'olio Di Oliva 3 X 80 G",
+          "stock_status": "IN_STOCK",
+          "special_from_date": null,
+          "special_to_date": null,
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 3.6,
+                "currency": "EUR"
+              },
+              "final_price": {
+                "value": 3.6
+              }
+            }
+          },
+          "custom_attributesV2": {
+            "items": [
+              {
+                "code": "ean",
+                "value": "0000000000017"
+              },
+              {
+                "code": "manufacturer",
+                "selected_options": [
+                  {
+                    "label": "TESTMARE",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "tipo_misura",
+                "selected_options": [
+                  {
+                    "label": "KG",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "misura_prezzo_chiaro",
+                "value": "0.240"
+              },
+              {
+                "code": "transparent_price",
+                "value": "1500.000000"
+              },
+              {
+                "code": "peso_variabile",
+                "value": "0"
+              },
+              {
+                "code": "description",
+                "value": "<p>Made-up product for tests.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "sku": "9000002",
+          "name": "Pastificio Prova Fusilli 500 G",
+          "stock_status": "IN_STOCK",
+          "special_from_date": "2026-01-05 00:00:00",
+          "special_to_date": "2026-01-18 23:59:59",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 1.2,
+                "currency": "EUR"
+              },
+              "final_price": {
+                "value": 0.84
+              }
+            }
+          },
+          "custom_attributesV2": {
+            "items": [
+              {
+                "code": "ean",
+                "value": "0000000000024"
+              },
+              {
+                "code": "manufacturer",
+                "selected_options": [
+                  {
+                    "label": "PASTIFICIO PROVA",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "tipo_misura",
+                "selected_options": [
+                  {
+                    "label": "KG",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "misura_prezzo_chiaro",
+                "value": "0.500"
+              },
+              {
+                "code": "transparent_price",
+                "value": "168.000000"
+              },
+              {
+                "code": "peso_variabile",
+                "value": "0"
+              },
+              {
+                "code": "in_promo",
+                "value": "1"
+              },
+              {
+                "code": "discount_percent",
+                "value": "030"
+              }
+            ]
+          }
+        },
+        {
+          "sku": "9000003",
+          "name": "Salumificio Finto Prosciutto Crudo 150 G Ca",
+          "stock_status": "IN_STOCK",
+          "special_from_date": null,
+          "special_to_date": null,
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 4.5,
+                "currency": "EUR"
+              },
+              "final_price": {
+                "value": 4.5
+              }
+            }
+          },
+          "custom_attributesV2": {
+            "items": [
+              {
+                "code": "ean",
+                "value": ""
+              },
+              {
+                "code": "manufacturer",
+                "selected_options": [
+                  {
+                    "label": "SALUMIFICIO FINTO",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "tipo_misura",
+                "selected_options": [
+                  {
+                    "label": "KG",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "code": "misura_prezzo_chiaro",
+                "value": "1.000"
+              },
+              {
+                "code": "transparent_price",
+                "value": "3000.000000"
+              },
+              {
+                "code": "peso_variabile",
+                "value": "1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
