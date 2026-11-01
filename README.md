@@ -71,7 +71,7 @@ GroceRoute solves them in this order: **data collection → AI matching → opti
 
 | Chain | Source | Auth | Regular prices | Offers | Price/kg | EAN | Technique |
 |---|---|---|---|---|---|---|---|
-| **Coop Alleanza 3.0** | EasyCoop – Magento GraphQL | None | ✅ full catalog | ✅ | ⚠️ to compute | ❓ to verify | `httpx` |
+| **Coop Alleanza 3.0** | EasyCoop – Magento GraphQL | None | ✅ full catalog | ✅ | ✅ | ✅ | `httpx` |
 | **Esselunga** | Esselunga a casa – search API | Session token (401 on direct calls) | ✅ full catalog | ✅ | ✅ | ✅ | Playwright (interception) |
 | **Lidl** | lidl.it – search API | None | ❌ current promos only | ✅ | ✅ | ❓ | `httpx` |
 | **Lidl** | Lidl Plus – receipts | Account login (refresh token) | ✅ purchased products only | — | — | ❓ | `lidl-plus` library |
@@ -107,7 +107,18 @@ GET https://www.easycoop.com/graphql?query=<query>&variables={}
 - The response is identical with and without cookies, so no session or postcode is needed. A search for "tonno" (tuna) returns 271 results.
 - Results are "noisy" (pet food, pork with tuna sauce…), which is why AI matching is needed.
 - There is a product detail endpoint (ingredients, allergens, nutrition facts) **without prices**: `GET /rest/c_901/V3/app/cache/products_light/{id}`.
-- **To verify:** are "member" (socio) discounts included in `final_price`, or do they only apply with the member card? Is an EAN field exposed in the GraphQL schema? (Can be explored via introspection.)
+- `final_price` already includes the current promo; `special_from_date` / `special_to_date` give its validity.
+- The extra data is in `custom_attributesV2` (verified on 2026-11-01):
+
+  | Attribute | Example | Notes |
+  |---|---|---|
+  | `ean` | `8001120670663` | only in the **unfiltered** list (~6 KB per product) |
+  | `manufacturer` | `["NOSTROMO"]` | brand |
+  | `tipo_misura` | `["KG"]` | `KG` \| `LT` \| `PZ` |
+  | `misura_prezzo_chiaro` | `0.112` | net quantity in that unit (drained weight for tuna) |
+  | `transparent_price` | `1027.000000` | price per unit × 100, based on the final price |
+  | `peso_variabile` | `1` | variable weight: the quantity is a `1.000` placeholder, derive it from price / unit price |
+- **To verify:** member (socio) discounts. The `member_*` attributes (`member_discount_percent`, `member_transparent_price`) matched the public ones on every product seen so far.
 
 ### Esselunga – Esselunga a casa
 
@@ -509,7 +520,7 @@ schedule:
 ## Roadmap
 
 ### Phase 1: data sources
-- [ ] `coop_easycoop.py`: GraphQL search and pagination
+- [x] `coop_easycoop.py`: GraphQL search and pagination
 - [ ] `lidl_offers.py`: search API
 - [ ] `esselunga.py`: Playwright with interception
 - [ ] `lidl_receipts.py`: Lidl Plus receipt import (verify IT accounts)
@@ -537,7 +548,7 @@ schedule:
 ## Open questions
 
 - [ ] **Esselunga:** do prices vary by postcode or store? Does `discountedPrice` include Fidaty promos?
-- [ ] **Coop:** is the member discount included in `final_price`? Is the EAN exposed via GraphQL? Do prices vary between areas (Bologna vs Modena)?
+- [ ] **Coop:** are there member-only prices, and do they show up in the `member_*` attributes? Do prices vary between areas (Bologna vs Modena)? (EAN: exposed as the `ean` custom attribute.)
 - [ ] **Lidl:** do offers on lidl.it vary by store? How is the store selected via the API?
 - [ ] **Lidl Plus:** does the library work with `country=IT`?
 - [ ] **Online vs in-store:** how much do online prices differ from what you pay at the till?

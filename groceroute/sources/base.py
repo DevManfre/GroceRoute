@@ -48,3 +48,7 @@ class Source(Protocol):
     async def fetch(self, query: str) -> list[PriceObservation]:
         """Search the source for `query` and return the prices found."""
         ...
+
+
+class SourceError(Exception):
+    """A source responded with something we cannot use (HTTP error, API error, new format)."""
