@@ -1,0 +1,176 @@
+{
+  "type": "search",
+  "q": "test",
+  "numFound": 5,
+  "offset": 0,
+  "fetchsize": 3,
+  "items": [
+    {
+      "resultClass": "product",
+      "type": "product",
+      "code": "90000001",
+      "gridbox": {
+        "data": {
+          "erpNumber": "90000001",
+          "itemId": 90000001,
+          "fullTitle": "TESTMARE Tonno all'olio d'oliva",
+          "title": "TESTMARE Tonno all'olio d'oliva",
+          "brand": {
+            "name": "Testmare"
+          },
+          "category": "Food",
+          "gs1Attributes": [],
+          "lidlPlus": [],
+          "price": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "price": 1.0,
+            "oldPrice": 1.5,
+            "discount": {
+              "deletedPrice": 1.5,
+              "percentageDiscount": 33,
+              "showDiscount": true
+            },
+            "packaging": {
+              "text": "2x 80 g confezione"
+            },
+            "basePrice": {
+              "prefix": false,
+              "text": "1 kg = 6.25 €"
+            }
+          },
+          "timezoneId": "Europe/Rome",
+          "regionsV2": {
+            "1": {
+              "regionName": "Test Region",
+              "regionPriceId": "1",
+              "isDefault": true
+            }
+          },
+          "regionsPrices": {
+            "1": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 1.0,
+                "oldPrice": 1.5,
+                "discount": {
+                  "deletedPrice": 1.5,
+                  "percentageDiscount": 33,
+                  "showDiscount": true
+                },
+                "packaging": {
+                  "text": "2x 80 g confezione"
+                },
+                "basePrice": {
+                  "prefix": false,
+                  "text": "1 kg = 6.25 €"
+                }
+              }
+            }
+          },
+          "storeStartDate": 1767567600,
+          "storeEndDate": 1768172399
+        }
+      }
+    },
+    {
+      "resultClass": "product",
+      "type": "product",
+      "code": "90000002",
+      "gridbox": {
+        "data": {
+          "erpNumber": "90000002",
+          "itemId": 90000002,
+          "fullTitle": "PROVA Mozzarella",
+          "title": "PROVA Mozzarella",
+          "brand": {
+            "name": "Prova"
+          },
+          "category": "Food",
+          "gs1Attributes": [],
+          "lidlPlus": [],
+          "price": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "price": 1.29,
+            "packaging": {
+              "text": "125 g confezione"
+            },
+            "basePrice": {
+              "prefix": false,
+              "text": "1 kg = 10,32 €"
+            }
+          },
+          "timezoneId": "Europe/Rome",
+          "regionsV2": {
+            "1": {
+              "regionName": "Test Region",
+              "regionPriceId": "1",
+              "isDefault": true
+            }
+          },
+          "regionsPrices": {
+            "1": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 1.29,
+                "packaging": {
+                  "text": "125 g confezione"
+                },
+                "basePrice": {
+                  "prefix": false,
+                  "text": "1 kg = 10,32 €"
+                }
+              }
+            }
+          },
+          "storeStartDate": 1767567600
+        }
+      }
+    },
+    {
+      "resultClass": "product",
+      "type": "product",
+      "code": "90000003",
+      "gridbox": {
+        "data": {
+          "erpNumber": "90000003",
+          "itemId": 90000003,
+          "fullTitle": "FINTOCASA Lampada da tavolo",
+          "title": "FINTOCASA Lampada da tavolo",
+          "brand": {
+            "name": "Fintocasa"
+          },
+          "category": "NonFood",
+          "gs1Attributes": [],
+          "lidlPlus": [],
+          "price": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "price": 9.99
+          },
+          "timezoneId": "Europe/Rome",
+          "regionsV2": {
+            "1": {
+              "regionName": "Test Region",
+              "regionPriceId": "1",
+              "isDefault": true
+            }
+          },
+          "regionsPrices": {
+            "1": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 9.99
+              }
+            }
+          },
+          "storeStartDate": 1767567600
+        }
+      }
+    }
+  ]
+}

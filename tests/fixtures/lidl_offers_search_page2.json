@@ -1,0 +1,131 @@
+{
+  "type": "search",
+  "q": "test",
+  "numFound": 5,
+  "offset": 3,
+  "fetchsize": 3,
+  "items": [
+    {
+      "resultClass": "product",
+      "type": "product",
+      "code": "90000004",
+      "gridbox": {
+        "data": {
+          "erpNumber": "90000004",
+          "itemId": 90000004,
+          "fullTitle": "ESEMPIO Latte intero",
+          "title": "ESEMPIO Latte intero",
+          "brand": {
+            "name": "Esempio"
+          },
+          "category": "Food",
+          "gs1Attributes": [],
+          "lidlPlus": [],
+          "price": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "price": 1.09,
+            "packaging": {
+              "text": "1 l confezione"
+            }
+          },
+          "timezoneId": "Europe/Rome",
+          "regionsV2": {
+            "1": {
+              "regionName": "Test Region",
+              "regionPriceId": "1",
+              "isDefault": true
+            }
+          },
+          "regionsPrices": {
+            "1": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 1.09,
+                "packaging": {
+                  "text": "1 l confezione"
+                }
+              }
+            }
+          },
+          "storeStartDate": 1767567600,
+          "storeEndDate": 1768172399
+        }
+      }
+    },
+    {
+      "resultClass": "product",
+      "type": "product",
+      "code": "90000005",
+      "gridbox": {
+        "data": {
+          "erpNumber": "90000005",
+          "itemId": 90000005,
+          "fullTitle": "PULITO Detersivo",
+          "title": "PULITO Detersivo",
+          "brand": {
+            "name": "Pulito"
+          },
+          "category": "Food",
+          "gs1Attributes": [],
+          "lidlPlus": [],
+          "price": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "price": 2.99,
+            "packaging": {
+              "text": "300/400/500 g confezione"
+            },
+            "basePrice": {
+              "prefix": false,
+              "text": "1 kg = 9.97/7.48/5.98 €"
+            }
+          },
+          "timezoneId": "Europe/Rome",
+          "regionsV2": {
+            "1": {
+              "regionName": "Test Region",
+              "regionPriceId": "1",
+              "isDefault": true
+            },
+            "301": {
+              "regionName": "Test Region - Emilia",
+              "regionPriceId": "2",
+              "isDefault": false
+            }
+          },
+          "regionsPrices": {
+            "1": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 2.99
+              }
+            },
+            "2": {
+              "currentPrice": {
+                "currencyCode": "EUR",
+                "currencySymbol": "€",
+                "price": 2.49,
+                "packaging": {
+                  "text": "1 kg confezione"
+                },
+                "basePrice": {
+                  "prefix": false,
+                  "text": "1 kg = 2.49 €"
+                }
+              }
+            }
+          },
+          "storeStartDate": 1767567600
+        }
+      }
+    },
+    {
+      "resultClass": "teaser",
+      "type": "teaser",
+      "code": "teaser-1"
+    }
+  ]
+}
