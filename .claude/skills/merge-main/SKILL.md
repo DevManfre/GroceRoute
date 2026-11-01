@@ -24,8 +24,9 @@ git push origin "$B:$B"          # solo se ci sono commit non pushati; nome espl
 gh pr create --base main --head "$B" --title "🔀 <TITLE> - merge $B into main" --body "<descrizione>"
 gh pr view <n> --json mergeable,mergeStateStatus   # CONFLICTING/DIRTY: fermarsi
 gh pr checks <n> --watch --fail-fast               # se ci sono check: verdi prima del merge
-gh pr merge <n> --merge
+gh pr merge <n> --merge --subject "🔀 <TITLE> - merge $B into main" --body ""
 ```
+`--subject` è obbligatorio: senza, GitHub usa "Merge pull request #n from …" e il commit di merge esce dal formato `git-commit-style`.
 `<TITLE>` = l'area toccata (`SOURCES`, `OPTIMIZER`, `MATCHER`, `BOT`, `DB`, `README`…). Titolo e corpo PR in inglese, formato `git-commit-style`, senza righe "Generated with" o co-autori.
 - **Vietato `--squash` e `--rebase`** su `main`: fondono o riscrivono i commit e sul grafico non resterebbe traccia degli originali. Vietato anche `git merge <branch>` locale verso `main`. Se il repo non permette il merge commit (`allow_merge_commit`), fermarsi e riferire.
 - **Conflitti**: **non** risolverli a intuito: riporta i file in conflitto all'utente e chiedi.
